@@ -31,13 +31,19 @@ void swap(int *array, int index1, int index2)
 
 void bubble_sort(int *array, size_t size)
 {
-	size_t i,  j;
+	size_t i,  j, Running_Max;
 
 	if (array == NULL || size < 2)
 		return;
+	Running_Max = array[0];
 
 	for (i = 1; i < size; i++)
 	{
+		if (array[i] > Running_Max)
+		{
+			Running_Max = array[i];
+			continue;
+		}
 		for (j = 0; j < i + 1; j++)
 		{
 			if (array[i] < array[j])
