@@ -47,5 +47,4 @@ void bubble_sort(int *array, size_t size)
 				i = swap(array, j, j + 1);
 		}
 	}
-	print_array(array, size);
 }
