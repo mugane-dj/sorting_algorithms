@@ -31,20 +31,20 @@ void swap(int *array, int index1, int index2)
 
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
+	size_t i,  j;
 
 	if (array == NULL || size < 2)
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	for (i = 1; i < size; i++)
 	{
-		for (j = 0; j < size - i - 1; j++)
+		for (j = 0; j < i + 1; j++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[i] < array[j])
 			{
-				swap(array, j, j + 1);
-				print_array(array, size);
+				swap(array, i, j);
 			}
 		}
 	}
+	print_array(array, size);
 }
