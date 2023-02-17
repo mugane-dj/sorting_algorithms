@@ -12,12 +12,13 @@
  * Return: void
  */
 
-void swap(int *array, int index1, int index2)
+int swap(int *array, size_t index1, size_t index2)
 {
 	int tmp = array[index1];
 
 	array[index1] = array[index2];
 	array[index2] = tmp;
+	return (0);
 }
 
 
@@ -31,25 +32,19 @@ void swap(int *array, int index1, int index2)
 
 void bubble_sort(int *array, size_t size)
 {
-	size_t i,  j, Running_Max;
+	int i = 0;
+	size_t j;
 
 	if (array == NULL || size < 2)
 		return;
-	Running_Max = array[0];
 
-	for (i = 1; i < size; i++)
+	while (i == 0)
 	{
-		if (array[i] > Running_Max)
+		i = 1;
+		for (j = 0; j < size - 1; j++)
 		{
-			Running_Max = array[i];
-			continue;
-		}
-		for (j = 0; j < i + 1; j++)
-		{
-			if (array[i] < array[j])
-			{
-				swap(array, i, j);
-			}
+			if (array[j] > array[j + 1])
+				i = swap(array, j, j + 1);
 		}
 	}
 	print_array(array, size);
