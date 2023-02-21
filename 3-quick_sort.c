@@ -8,10 +8,10 @@
  * @index1: The index of the first element to swap.
  * @index2: The index of the second element to swap.
  *
- * Return: void
+ * Return: Void.
  */
 
-void swap(int *array, int index1, int index2)
+void swap_int(int *array, int index1, int index2)
 {
 	int tmp = array[index1];
 
@@ -38,11 +38,12 @@ void quick_sort(int *array, size_t size)
 	{
 		if (array[j] <= pivot)
 		{
-			swap(array, i, j);
+			swap_int(array, i, j);
+			print_array(array, size);
 			i++;
 		}
 	}
-	swap(array, i, size - 1);
+	swap_int(array, i, (int)size - 1);
 
 	quick_sort(array, i);
 	quick_sort(array + i + 1, size - i - 1);
