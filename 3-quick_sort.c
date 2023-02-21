@@ -2,7 +2,7 @@
 #include "sort.h"
 
 /**
- * swap - swaps two elements in an array.
+ * swap_int - swaps two elements in an array.
  *
  * @array: The array in which to swap the elements.
  * @index1: The index of the first element to swap.
@@ -39,7 +39,6 @@ void quick_sort(int *array, size_t size)
 		if (array[j] <= pivot)
 		{
 			swap_int(array, i, j);
-			print_array(array, size);
 			i++;
 		}
 	}
