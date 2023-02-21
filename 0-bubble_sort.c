@@ -9,7 +9,7 @@
  * @index1: The index of the first element to swap.
  * @index2: The index of the second element to swap.
  *
- * Return: void
+ * Return: Always 0
  */
 
 int swap(int *array, size_t index1, size_t index2)
