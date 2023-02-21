@@ -40,7 +40,6 @@ void quick_sort(int *array, size_t size)
 		{
 			swap_int(array, i, j);
 			i++;
-			print_array(array, size);
 		}
 	}
 	swap_int(array, i, (int)size - 1);
