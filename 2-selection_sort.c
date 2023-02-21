@@ -23,31 +23,38 @@ int swap(int *array, size_t index1, size_t index2)
 
 
 /**
- * bubble_sort - Sorts an array of integers in ascending order.
+ * selection_sort - Sorts an array of integers in ascending order.
  *
  * @array: The array to sort.
  * @size: The size of the array.
  * Return: void.
  */
 
-void bubble_sort(int *array, size_t size)
+void selection_sort(int *array, size_t size)
 {
-	int i = 0;
-	size_t j;
+	size_t i,  j, position1 = 0, position2 = 0;
+	int Running_Min = array[0];
 
 	if (array == NULL || size < 2)
 		return;
 
-	while (i == 0)
+	for (i = 0; i < size; i++)
 	{
-		i = 1;
-		for (j = 0; j < size - 1; j++)
+		for (j = position1; j < size; j++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[j] < Running_Min)
 			{
-				i = swap(array, j, j + 1);
-				print_array(array, size);
+				position2 = j;
+				Running_Min = array[j];
 			}
 		}
+		if (Running_Min != array[position1])
+		{
+			swap(array, position1, position2);
+			print_array(array, size);
+		}
+		position1++;
+		Running_Min = array[position1];
 	}
 }
+
