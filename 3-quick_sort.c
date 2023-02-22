@@ -41,6 +41,7 @@ void quick_sort(int *array, size_t size)
 
 	while (has_swapped == 1)
 	{
+		has_swapped = 0;
 		for (i = 0; i < size - 1; i++)
 		{
 			if (tmp[i] > pivot)
@@ -66,7 +67,7 @@ void quick_sort(int *array, size_t size)
 		if (position2_changed == 0)
 		{
 			size--;
-			tmp += sizeof(size_t);
+			tmp++;
 			quick_sort(tmp, size);
 		}
 		if (position1 < position2)
@@ -79,7 +80,7 @@ void quick_sort(int *array, size_t size)
 			quick_sort(tmp, size_tmp);
 			pivot_position = size - 1;
 			size_tmp = position2;
-			tmp += (sizeof(size_t) * (position2 + 1));
+			tmp += (position2 + 1);
 			quick_sort(tmp, size_tmp);
 		}
 	}
