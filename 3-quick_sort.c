@@ -29,7 +29,7 @@ int swap(int *array, size_t index1, size_t index2)
  */
 void quick_sort(int *array, size_t size)
 {
-	int *tmp = array;
+	int *tmp = &array[0];
 	size_t i, j, position1 = 0, position2 = 0, size_tmp = size;
 	int pivot = array[size - 1];
 	size_t pivot_position = size - 1;
@@ -72,10 +72,10 @@ void quick_sort(int *array, size_t size)
 			quick_sort(tmp, size);
 		}
 		if (position1 < position2)
-			has_swapped = swap(array, position1, position2);
+			has_swapped = swap(tmp, position1, position2);
 		else
 		{
-			has_swapped = swap(array, position2, pivot_position);
+			has_swapped = swap(tmp, position2, pivot_position);
 			pivot_position = position2 - 1;
 			size_tmp -= position2;
 			quick_sort(tmp, size_tmp);
