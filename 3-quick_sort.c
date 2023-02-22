@@ -55,7 +55,7 @@ void quick_sort(int *array, size_t size)
 			size--;
 			quick_sort(tmp, size);
 		}
-		for (j = size - 2; j >= (size_t)0; j--)
+		for (j = -2; j >= -(size); j--)
 		{
 			if (tmp[j] < pivot)
 			{
