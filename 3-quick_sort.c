@@ -61,6 +61,7 @@ void quick_sort(int *array, size_t size)
 			if (tmp[j] < pivot)
 			{
 				position2 = j;
+				position2_changed = 1;
 				break;
 			}
 		}
