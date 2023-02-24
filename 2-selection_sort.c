@@ -33,11 +33,13 @@ int swap(int *array, size_t index1, size_t index2)
 void selection_sort(int *array, size_t size)
 {
 	size_t i,  j, position1 = 0, position2 = 0;
-	int Running_Min = array[0];
+	int Running_Min;
 
 	if (array == NULL || size < 2)
 		return;
+	
 
+	Running_Min = array[0];
 	for (i = 0; i < size; i++)
 	{
 		for (j = position1; j < size; j++)
