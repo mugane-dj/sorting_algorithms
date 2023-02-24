@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "sort.h"
 
 /**
@@ -42,7 +43,7 @@ void quick_sort(int *array, size_t size)
 	while (has_swapped == 1)
 	{
 		has_swapped = 0;
-		for (i = 0; i < size; i++)
+		for (i = 0; i < (size_tmp - 1); i++)
 		{
 			if (tmp[i] > pivot)
 			{
@@ -56,7 +57,7 @@ void quick_sort(int *array, size_t size)
 			size_tmp--;
 			quick_sort(tmp, size_tmp);
 		}
-		for (j = -1; j >= -(size); j--)
+		for (j = (size_tmp - 1); j >= 1; j--)
 		{
 			if (tmp[j] < pivot)
 			{
@@ -67,13 +68,13 @@ void quick_sort(int *array, size_t size)
 		}
 		if (position2_changed == 0)
 		{
-			has_swapped = swap(tmp, 0, size - 1);
+			has_swapped = swap(tmp, 0, size_tmp - 1);
 			print_array(array, size);
 			size_tmp--;
 			tmp++;
 			quick_sort(tmp, size_tmp);
 		}
-		if ((position1 < position2) && (position1_changed == position2_changed))
+		if (position1 < position2)
 		{
 			has_swapped = swap(tmp, position1, position2);
 			print_array(array, size);
