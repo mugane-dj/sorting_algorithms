@@ -37,7 +37,6 @@ void selection_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	
 
 	Running_Min = array[0];
 	for (i = 0; i < size; i++)
