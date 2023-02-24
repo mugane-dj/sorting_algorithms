@@ -65,13 +65,18 @@ void swap_nodes(listint_t **list, listint_t *curr_node, listint_t *prev_node)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr_node = (*list)->next;
+	listint_t *curr_node = NULL;
 	listint_t *prev_node = NULL;
 	size_t size;
 
-	size = listint_len(*list);
-	if (list == NULL || *list == NULL || (*list)->next == NULL || size < 2)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+
+	size = listint_len(*list);
+	if (size < 2)
+		return;
+
+	curr_node = (*list)->next;
 
 	while (curr_node != NULL)
 	{
