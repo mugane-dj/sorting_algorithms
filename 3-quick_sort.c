@@ -28,12 +28,12 @@ void swap_int(int *array, int index1, int index2)
  */
 void quick_sort(int *array, size_t size)
 {
-	int i = 0, j;
-	int pivot = array[size - 1];
+	int i = 0, j, pivot;
 
 	if (array == NULL || size < 2)
 		return;
 
+	pivot = array[size - 1];
 	for (j = 0; j < (int)size - 1; j++)
 	{
 		if (array[j] <= pivot)
